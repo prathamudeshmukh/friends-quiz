@@ -22,6 +22,8 @@ public class Profile {
         this.emailid = emailid;
     }
 
+    public Profile(){}
+
     public Long getId() {
         return this.id;
     }
@@ -30,23 +32,4 @@ public class Profile {
         return this.name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getNickname() {
-        return this.nickname;
-    }
-
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
-    }
-
-    public String getEmailid() {
-        return this.emailid;
-    }
-
-    public void setEmailid(String emailid) {
-        this.emailid = emailid;
-    }
 }

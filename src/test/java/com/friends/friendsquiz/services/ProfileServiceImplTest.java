@@ -12,6 +12,9 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
@@ -36,13 +39,22 @@ public class ProfileServiceImplTest {
     public void setUp(){
         Profile profile = new Profile("prathamesh", "pratham", "pratham@quiz.com");
         Mockito.when(profileRepository.findById(1L)).thenReturn(profile);
+        List<Profile> allProfiles = new ArrayList<Profile>();
+        allProfiles.add(profile);
+        Mockito.when(profileRepository.findAll()).thenReturn(allProfiles);
     }
 
     @Test
     public void whenValidId_thenProfileShouldBeFound(){
         Profile found = profileService.getProfileById(1L);
-
         assertThat(found.getName()).isEqualTo("prathamesh");
+    }
+
+    @Test
+    public void whenRecordsPresent_thenListOfProfilesShouldBeReturned(){
+        List<Profile> allProfiles = profileService.getAllProfiles();
+
+        assertThat(allProfiles.size()).isEqualTo(1);
     }
 
 }

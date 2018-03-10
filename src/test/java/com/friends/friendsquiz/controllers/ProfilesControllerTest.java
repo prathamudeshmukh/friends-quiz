@@ -22,8 +22,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.hamcrest.CoreMatchers.is;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(ProfileController.class)
-public class ProfileControllerTest {
+@WebMvcTest(ProfilesController.class)
+public class ProfilesControllerTest {
 
     @Autowired
     private MockMvc mvc;

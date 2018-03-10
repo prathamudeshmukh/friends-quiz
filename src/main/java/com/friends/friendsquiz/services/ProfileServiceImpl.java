@@ -3,9 +3,11 @@ package com.friends.friendsquiz.services;
 import com.friends.friendsquiz.models.Profile;
 import com.friends.friendsquiz.repository.ProfileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ProfileServiceImpl implements ProfileService{
 
     @Autowired

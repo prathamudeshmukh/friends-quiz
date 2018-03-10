@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface ProfileService {
 
-        public Profile getProfileById(Long id);
-        public List<Profile> getAllProfiles();
+        Profile getProfileById(Long id);
+        List<Profile> getAllProfiles();
 }
