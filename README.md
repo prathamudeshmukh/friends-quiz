@@ -1,3 +1,4 @@
 [![Build Status](https://travis-ci.org/prathamudeshmukh/friends-quiz.svg?branch=master)](https://travis-ci.org/prathamudeshmukh/friends-quiz)
-# friends-quiz
-Simple personalized quiz for friends :)
+[![codecov](https://codecov.io/gh/prathamudeshmukh/friends-quiz/branch/master/graph/badge.svg)](https://codecov.io/gh/prathamudeshmukh/friends-quiz)
+# Friends-Quiz
+A simple personalized quiz for friends :)
