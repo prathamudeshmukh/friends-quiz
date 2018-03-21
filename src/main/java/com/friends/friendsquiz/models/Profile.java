@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@Data @Entity
+@Entity
 public class Profile {
 
     @Id @GeneratedValue
@@ -31,5 +31,22 @@ public class Profile {
     public String getName() {
         return this.name;
     }
+
+	public String getNickname() {
+		return nickname;
+	}
+
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+
+	public String getEmailid() {
+		return emailid;
+	}
+
+	public void setEmailid(String emailid) {
+		this.emailid = emailid;
+	}
+    
 
 }
