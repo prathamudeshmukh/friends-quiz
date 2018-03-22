@@ -1,0 +1,4 @@
+run command : mvn cobertura:cobertura
+run unit test : mvn test
+Coverage file index.html will be generated at below loaction
+${project_directory}/target/site/cobertura/index.html.
