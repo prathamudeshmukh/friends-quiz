@@ -5,9 +5,22 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
-public interface ProfileRepository extends CrudRepository<Profile, Long>{
+/**
+ * This class will handle Profile related db operations.
+ */
+public interface ProfileRepository extends CrudRepository<Profile, Long> {
 
-    public Profile findById(Long id);
-    public List<Profile> findAll();
+    /**
+     * Find profile by id.
+     * @param id Profile id
+     * @return Profile
+     */
+    Profile findById(Long id);
+
+    /**
+     * List all profiles.
+     * @return List of Profiles
+     */
+    List<Profile> findAll();
 
 }

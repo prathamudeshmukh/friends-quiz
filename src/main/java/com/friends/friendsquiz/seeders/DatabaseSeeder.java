@@ -7,39 +7,68 @@ import com.github.javafaker.Name;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Logger;
 
+/**
+ * This class will handle all the test data to seed.
+ */
 @Component
 public class DatabaseSeeder {
 
-//    private Logger logger = Logger.getLogger(DatabaseSeeder.class);
+    /**
+     * Profile repository object.
+     */
     private ProfileRepository profileRepository;
-    private Faker faker;
-    private static int TOTAL_NUMBER_OF_PROFILES = 10;
 
+    /**
+     * Faker object to generate name, address attress.
+     */
+    private Faker faker;
+
+    /**
+     * Number of fake profiles to be generated.
+     */
+    private static final int TOTAL_NUMBER_OF_PROFILES = 10;
+
+    /**
+     * Default constructor.
+     * @param profileRepository Profile repository
+     */
     @Autowired
     public DatabaseSeeder(
-            ProfileRepository profileRepository,
-            JdbcTemplate jdbcTemplate) {
+            final ProfileRepository profileRepository
+    ) {
         this.profileRepository = profileRepository;
         faker = new Faker();
     }
 
+    /**
+     * Event listener.
+     * @param event On which event this method will be handled
+     */
     @EventListener
-    public void seed(ContextRefreshedEvent event) {
+    @SuppressWarnings("checkstyle:designforextension")
+    public void seed(final ContextRefreshedEvent event) {
         seedProfilesTable();
     }
 
+    /**
+     * This method will handle the table seeding with data.
+     */
     private void seedProfilesTable() {
         List<Profile> allProfiles = new ArrayList<Profile>();
-        for(int i=0; i<TOTAL_NUMBER_OF_PROFILES; i++){
+        for (int i = 0; i < TOTAL_NUMBER_OF_PROFILES; i++) {
             Name name = faker.name();
-           allProfiles.add(new Profile(name.fullName(), name.username(), name.username()+"@mail.cc"));
+           allProfiles.add(
+                   new Profile(
+                           name.fullName(),
+                           name.username(),
+                           name.username() + "@mail.cc"
+                   )
+           );
         }
         profileRepository.save(allProfiles);
     }
