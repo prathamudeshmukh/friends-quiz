@@ -1,52 +1,105 @@
 package com.friends.friendsquiz.models;
 
-import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+/**
+ * Entity class which handles the store user profiles.
+ */
 @Entity
 public class Profile {
 
+    /**
+     * Primary key.
+     */
     @Id @GeneratedValue
     private Long id;
 
+    /**
+     * Name of the user.
+     */
     private String name;
+
+    /**
+     * Nickname of the user.
+     */
     private String nickname;
+
+    /**
+     * Email id of the user.
+     */
     private String emailid;
 
-    public Profile(String name, String nickname, String emailid){
+    /**
+     * The profile constructor which sets all the properties.
+     *
+     * @param name User name
+     * @param nickname nick name
+     * @param emailid email id
+     */
+    public Profile(
+            final String name,
+            final String nickname,
+            final String emailid
+    ) {
         this.name = name;
         this.nickname = nickname;
         this.emailid = emailid;
     }
 
-    public Profile(){}
+    /**
+     * Empty constructor.
+     */
+    public Profile() {  }
 
-    public Long getId() {
+    /**
+     * Getter for Id.
+     * @return id
+     */
+    public final Long getId() {
         return this.id;
     }
 
-    public String getName() {
+    /**
+     * Getter for name.
+     * @return name
+     */
+    public final String getName() {
         return this.name;
     }
 
-	public String getNickname() {
-		return nickname;
-	}
+    /**
+     * Getter for nickname.
+     * @return nickname nickname
+     */
+    public final String getNickname() {
+        return nickname;
+    }
 
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
-	}
+    /**
+     * Setter for nickname.
+     * @param nickname nickname
+     */
+    public final void setNickname(final String nickname) {
+       this.nickname = nickname;
+    }
 
-	public String getEmailid() {
-		return emailid;
-	}
+    /**
+     * Getter for mailid.
+     * @return emailid
+     */
+    public final String getEmailid() {
+        return emailid;
+    }
 
-	public void setEmailid(String emailid) {
-		this.emailid = emailid;
-	}
-    
+    /**
+     * Setter for emailid.
+     * @param emailid emailid
+     */
+    public final void setEmailid(final String emailid) {
+        this.emailid = emailid;
+    }
 
 }
