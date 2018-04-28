@@ -27,8 +27,7 @@ public class HomeControllerTest {
 	public void testHomeApi() throws Exception {
     	
     	 mvc.perform(get("/")
-                 .contentType(MediaType.TEXT_HTML))
-                 .andExpect(status().isOk())
+                 .contentType(MediaType.TEXT_HTML)).andExpect(status().isOk())
                  .andExpect(content().contentType(TestConstants.CONTENT_TYPE_HTML_CHARSET_UTF_8));    	 
     
 	}
