@@ -1,4 +1,6 @@
 /**
- * This package contains repository classes which handles DB operations.
+ * The application classes which contains.
+ * Controllers, Services, Models, and Seeders.
+ *
  */
 package com.friends.friendsquiz.repository;

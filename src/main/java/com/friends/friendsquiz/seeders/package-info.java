@@ -1,4 +1,6 @@
 /**
- * This package contains the database seeder classes.
+ * The application classes which contains.
+ * Controllers, Services, Models, and Seeders.
+ *
  */
 package com.friends.friendsquiz.seeders;
